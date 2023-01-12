@@ -1,0 +1,56 @@
+main#main .container {
+    @include flex-with-gap(72px);
+    align-items: center;
+
+    .hero-text {
+        @include flex(column, center, flex-start);
+        gap: 16px;
+
+        p {
+            &:first-of-type {
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                font-size: $fs-s;
+            }
+
+            &:nth-of-type(2) {
+                font-size: $fs-m;
+                line-height: 32px;
+            }
+        }
+
+        h1 {
+            font-size: $fs-xl;
+            line-height: 86px;
+            margin: 0;
+        }
+
+        button {
+            background-color: $color-accent;
+            color: #fff;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            width: 170px;
+            padding: 16px 0;
+            border-radius: 4px;
+
+            &:hover {
+                cursor: pointer;
+                animation: buttonHover 1s ease-in-out;
+            }
+        }
+    }
+}
+
+@keyframes buttonHover {
+    0% {
+        background-color: $color-accent;
+    }
+    25% {
+        background-color: $color-accent-2;
+    }
+    100% {
+        background-color: $color-accent;
+    }
+}

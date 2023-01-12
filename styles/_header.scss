@@ -1,32 +1,55 @@
-header#header .container {
-    @include flex(row, space-between, center);
+header#header {
+    padding: 8px 0;
+    box-shadow: 0px 4px 20px #eee;
+    margin-bottom: 50px;
 
-    nav.nav-items {
-        @include flex-with-gap(64px);
+    .container {
+        @include flex(row, space-between, center);
 
-        a {
-            color: $colour-secondary;
-            
-            &:first-of-type {
-                color: $color-accent;
-                border-bottom: 6px double $color-accent;
+        nav.nav-items {
+            @include flex-with-gap(64px);
+
+            a {
+                color: $colour-secondary;
+                
+                &:first-of-type {
+                    color: $color-accent;
+                    border-bottom: 6px double $color-accent;
+
+                    &:hover {
+                        animation: borderStyle 2s ease-in-out;
+                    }
+                }
+
+                &:hover {
+                    color: $color-accent;
+                }
             }
+        }
 
-            &:hover {
-                color: $color-accent;
+        .socials {
+            @include flex-with-gap(12px);
+
+            img {
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.1);
+                }
             }
         }
     }
+}
 
-    .socials {
-        @include flex-with-gap(12px);
-
-        img {
-            &:hover {
-                cursor: pointer;
-                transform: scale(1.1);
-            }
-        }
+@keyframes borderStyle {
+    0% {
+        border-bottom-style: double;
+    }
+    50% {
+        border-bottom-style: solid;
+        border-bottom-color: $color-accent-2;
+    }
+    0% {
+        border-bottom-style: double;
     }
 }
 

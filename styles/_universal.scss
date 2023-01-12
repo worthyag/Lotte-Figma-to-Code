@@ -1,5 +1,11 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    margin: 0;
     font-family: $font-main;
+    color: #263238;
 }
 
 @mixin container($mx, $my) {
