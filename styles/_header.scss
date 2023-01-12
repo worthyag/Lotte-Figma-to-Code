@@ -1,0 +1,32 @@
+header#header .container {
+    @include flex(row, space-between, center);
+
+    nav.nav-items {
+        @include flex-with-gap(64px);
+
+        a {
+            color: $colour-secondary;
+            
+            &:first-of-type {
+                color: $color-accent;
+                border-bottom: 6px double $color-accent;
+            }
+
+            &:hover {
+                color: $color-accent;
+            }
+        }
+    }
+
+    .socials {
+        @include flex-with-gap(12px);
+
+        img {
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+

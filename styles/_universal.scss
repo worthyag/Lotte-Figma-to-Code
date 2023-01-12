@@ -1,0 +1,28 @@
+body {
+    font-family: $font-main;
+}
+
+@mixin container($mx, $my) {
+    margin: $my $mx;
+}
+
+@mixin flex($direction, $justify-content, $align-items) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin flex-with-gap($gap) {
+    display: flex;
+    gap: $gap;
+}
+
+.container {
+    @include container( $container-margin, 20px);
+}
+
+a {
+    text-decoration: none;
+    color: black; 
+}
